@@ -3,9 +3,9 @@ package tester;
 import student.StudentArrayDeque;
 import edu.princeton.cs.introcs.StdRandom;
 
-/** If you project is set up properly, this file should execute. 
-* One thing you might consider is to try printing out the sequence of
-* operations */
+/** 如果你的项目设置正确，本文件应该可以执行。
+* 你或许可以考虑的一件事是尝试打印出操作的
+* 序列 */
 public class StudentArrayDequeLauncher {
     public static void main(String[] args) {
         StudentArrayDeque<Integer> sad1 = new StudentArrayDeque<>();

@@ -5,14 +5,13 @@ import org.junit.Test;
 
 public class ArithmeticTest {
 
-    /** Performs a few arbitrary tests to see if the product method is
-     * correct */
+    /** 执行若干任意测试，以检查 product 方法是否正确 */
     @Test
     public void testProduct() {
-        /* assertEquals for comparison of ints takes two arguments:
-        assertEquals(expected, actual).
-        if it is false, then the assertion will be false,
-        and this test will fail.
+        /* 用于比较 int 的 assertEquals 接收两个参数：
+        assertEquals(expected, actual)。
+        如果结果为 false，则断言为 false，
+        该测试将会失败。
         */
 
         assertEquals(30, Arithmetic.product(5, 6));
@@ -20,7 +19,7 @@ public class ArithmeticTest {
         assertEquals(0, Arithmetic.product(0, -6));
     }
 
-    /** Performs a few arbitrary tests to see if the sum method is correct */
+    /** 执行若干任意测试，以检查 sum 方法是否正确 */
     @Test
     public void testSum() {
 

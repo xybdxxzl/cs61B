@@ -1,8 +1,8 @@
 package byow.Core;
 
-/** This is the main entry point for the program. This class simply parses
- *  the command line inputs, and lets the byow.Core.Engine class take over
- *  in either keyboard or input string mode.
+/** 这是程序的 main 入口点。此类仅解析
+ *  命令行输入，并让 byow.Core.Engine 类在键盘模式
+ *  或输入字符串模式下接管。
  */
 public class Main {
     public static void main(String[] args) {

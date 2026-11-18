@@ -2,13 +2,13 @@ import java.util.Properties;
 
 public class GetEnvironmentVariables {
 
-    //  Fill in the path to your sp21-s*** folder between the quotes
+    //  在引号之间填入你的 sp21-s*** 文件夹的路径
     public static String REPO_DIR = "";
 
-    //  Fill in the path to your snaps-sp21-s*** folder between the quotes
+    //  在引号之间填入你的 snaps-sp21-s*** 文件夹的路径
     public static String SNAPS_DIR = "";
 
-    // Fill in the type of your shell by running 'echo $0` in your terminal. It should be zsh or bash.
+    // 通过在终端运行 'echo $0` 填入你的 shell 类型。它应该是 zsh 或 bash。
     public static String SHELL = "";
 
     public static void main(String[] args) {

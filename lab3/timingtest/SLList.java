@@ -1,7 +1,7 @@
 package timingtest;
 
-/** An SLList is a list of integers, which hides the terrible truth
- * of the nakedness within. */
+/** SLList 是一个整数列表，它隐藏了内部赤裸裸的
+ * 糟糕真相。 */
 public class SLList<Item> {
 	private class IntNode {
 		public Item item;
@@ -13,11 +13,11 @@ public class SLList<Item> {
 		}
 	}
 
-	/* The first item (if it exists) is at sentinel.next. */
+	/* 第一个元素（如果存在）位于 sentinel.next。 */
 	private IntNode sentinel;
 	private int size;
 
-	/** Creates an empty timingtest.SLList. */
+	/** 创建一个空的 timingtest.SLList。 */
 	public SLList() {
 		sentinel = new IntNode(null, null);
 		size = 0;
@@ -29,24 +29,24 @@ public class SLList<Item> {
 		size = 1;
 	}
 
-	/** Adds x to the front of the list. */
+	/** 将 x 添加到列表的前端。 */
 	public void addFirst(Item x) {
 		sentinel.next = new IntNode(x, sentinel.next);
 		size = size + 1;
 	}
 
-	/** Returns the first item in the list. */
+	/** 返回列表中的第一个元素。 */
 	public Item getFirst() {
 		return sentinel.next.item;
 	}
 
-	/** Adds x to the end of the list. */
+	/** 将 x 添加到列表的末尾。 */
 	public void addLast(Item x) {
 		size = size + 1;
 
 		IntNode p = sentinel;
 
-		/* Advance p to the end of the list. */
+		/* 将 p 前进到列表的末尾。 */
 		while (p.next != null) {
 			p = p.next;
 		}
@@ -54,11 +54,11 @@ public class SLList<Item> {
 		p.next = new IntNode(x, null);
 	}
 
-	/** returns last item in the list */
+	/** 返回列表中的最后一个元素 */
 	public Item getLast() {
 		IntNode p = sentinel;
 
-		/* Advance p to the end of the list. */
+		/* 将 p 前进到列表的末尾。 */
 		while (p.next != null) {
 			p = p.next;
 		}
@@ -67,13 +67,13 @@ public class SLList<Item> {
 	}
 
 
-	/** Returns the size of the list. */
+	/** 返回列表的大小。 */
 	public int size() {
 		return size;
 	}
 
 	public static void main(String[] args) {
-		/* Creates a list of one integer, namely 10 */
+		/* 创建一个只含一个整数的列表，即 10 */
 		SLList L = new SLList();
 		L.addLast(20);
 		System.out.println(L.size());

@@ -5,7 +5,7 @@ import edu.princeton.cs.introcs.StdDraw;
 import java.util.Random;
 
 /**
- * Created by hug.
+ * 由 hug 创建。
  */
 public class RandomInputSource implements InputSource {
     Random r;
@@ -14,7 +14,7 @@ public class RandomInputSource implements InputSource {
         r = new Random(seed);
     }
 
-    /** Returns a random letter between a and z.*/
+    /** 返回一个 a 到 z 之间的随机字母。*/
     public char getNextKey() {
         return (char) (r.nextInt(26) + 'A');
     }

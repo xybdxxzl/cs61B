@@ -5,38 +5,38 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
- * Hash Table with Priority Queue buckets
- * Elements of priority queues need to be comparable, so we restrict our map to
- * only allow comparable keys
+ * 使用 Priority Queue（优先队列）作为桶的哈希表
+ * 优先队列的元素需要可比较，因此我们将映射限制为
+ * 只允许可比较的键
  *
  * @author Neil Kulkarni
  */
 public class MyHashMapPQBuckets<K extends Comparable<K>, V> extends MyHashMap<K, V> {
 
     /**
-     * Constructor that creates a backing array with default
-     * initial size and load factor
+     * 构造器，创建一个使用默认初始大小
+     * 和负载因子的底层数组
      */
     public MyHashMapPQBuckets() {
         super();
     }
 
     /**
-     * Constructor that creates a backing array of initialSize
-     * and default load factor
+     * 构造器，创建一个大小为 initialSize
+     * 并使用默认负载因子的底层数组
      *
-     * @param initialSize initial size of backing array
+     * @param initialSize 底层数组的初始大小
      */
     public MyHashMapPQBuckets(int initialSize) {
         super(initialSize);
     }
 
     /**
-     * Constructor that creates a backing array of initialSize.
-     * The load factor (# items / # buckets) should always be <= loadFactor
+     * 构造器，创建一个大小为 initialSize 的底层数组。
+     * 负载因子（# 元素 / # 桶）应始终 <= loadFactor
      *
-     * @param initialSize initial size of backing array
-     * @param maxLoad maximum load factor
+     * @param initialSize 底层数组的初始大小
+     * @param maxLoad 最大负载因子
      */
     public MyHashMapPQBuckets(int initialSize, double maxLoad) {
         super(initialSize, maxLoad);
@@ -44,13 +44,13 @@ public class MyHashMapPQBuckets<K extends Comparable<K>, V> extends MyHashMap<K,
 
     @Override
     protected Collection<Node> createBucket() {
-        // This is fancy new-fangled Java that says in plain English:
+        // 这是花哨的新式 Java，用大白话说就是：
         //
-        //  "Build a PriorityQueue of Nodes, and when you compare two Nodes,
-        //   compare their keys by their key's compareTo method"
+        //  "构建一个 Node 的 PriorityQueue，当你比较两个 Node 时，
+        //   通过它们键的 compareTo 方法比较它们的键"
         //
-        // Remember, we had K extends Comparable<K> in our class header,
-        // so we know the keys have implemented a compareTo method
+        // 记住，我们在类声明处有 K extends Comparable<K>，
+        // 因此我们知道这些键已经实现了 compareTo 方法
         return new PriorityQueue<>(Comparator.comparing(a -> a.key));
     }
 }

@@ -5,46 +5,45 @@ import byow.TileEngine.TETile;
 
 public class Engine {
     TERenderer ter = new TERenderer();
-    /* Feel free to change the width and height. */
+    /* 随意修改宽度和高度。 */
     public static final int WIDTH = 80;
     public static final int HEIGHT = 30;
 
     /**
-     * Method used for exploring a fresh world. This method should handle all inputs,
-     * including inputs from the main menu.
+     * 用于探索一个全新世界的方法。此方法应处理所有输入，
+     * 包括来自主菜单的输入。
      */
     public void interactWithKeyboard() {
     }
 
     /**
-     * Method used for autograding and testing your code. The input string will be a series
-     * of characters (for example, "n123sswwdasdassadwas", "n123sss:q", "lwww". The engine should
-     * behave exactly as if the user typed these characters into the engine using
-     * interactWithKeyboard.
+     * 用于自动评分和测试你的代码的方法。输入字符串将是一系列
+     * 字符（例如 "n123sswwdasdassadwas"、"n123sss:q"、"lwww"）。引擎的行为应
+     * 完全就像用户使用 interactWithKeyboard 将这些字符
+     * 输入到引擎中一样。
      *
-     * Recall that strings ending in ":q" should cause the game to quite save. For example,
-     * if we do interactWithInputString("n123sss:q"), we expect the game to run the first
-     * 7 commands (n123sss) and then quit and save. If we then do
-     * interactWithInputString("l"), we should be back in the exact same state.
+     * 回想一下，以 ":q" 结尾的字符串应使游戏退出并保存。例如，
+     * 如果我们调用 interactWithInputString("n123sss:q")，我们期望游戏运行前
+     * 7 条命令（n123sss），然后退出并保存。如果我们接着调用
+     * interactWithInputString("l")，我们应该回到完全相同的状态。
      *
-     * In other words, both of these calls:
+     * 换句话说，以下两个调用：
      *   - interactWithInputString("n123sss:q")
      *   - interactWithInputString("lww")
      *
-     * should yield the exact same world state as:
+     * 应产生与下面这个调用完全相同的世界状态：
      *   - interactWithInputString("n123sssww")
      *
-     * @param input the input string to feed to your program
-     * @return the 2D TETile[][] representing the state of the world
+     * @param input 要喂给你的程序的输入字符串
+     * @return 表示世界状态的二维 TETile[][]
      */
     public TETile[][] interactWithInputString(String input) {
-        // TODO: Fill out this method so that it run the engine using the input
-        // passed in as an argument, and return a 2D tile representation of the
-        // world that would have been drawn if the same inputs had been given
-        // to interactWithKeyboard().
+        // TODO: 填充此方法，使其使用作为参数传入的输入运行引擎，
+        // 并返回一个二维 tile 表示；如果同样的输入
+        // 传给 interactWithKeyboard()，世界就会画成那样。
         //
-        // See proj3.byow.InputDemo for a demo of how you can make a nice clean interface
-        // that works for many different input types.
+        // 参见 proj3.byow.InputDemo，了解如何做出一个简洁优雅、能适用于
+        // 多种不同输入类型的接口的演示。
 
         TETile[][] finalWorldFrame = null;
         return finalWorldFrame;

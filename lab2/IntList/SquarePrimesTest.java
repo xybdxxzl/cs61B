@@ -6,9 +6,9 @@ import org.junit.Test;
 public class SquarePrimesTest {
 
     /**
-     * Here is a test for isPrime method. Try running it.
-     * It passes, but the starter code implementation of isPrime
-     * is broken. Write your own JUnit Test to try to uncover the bug!
+     * 这里有一个针对 isPrime 方法的测试。试着运行它。
+     * 它能通过，但起始代码中 isPrime 的实现
+     * 是有问题的。请编写你自己的 JUnit 测试来尝试找出这个 bug！
      */
     @Test
     public void testSquarePrimesSimple() {

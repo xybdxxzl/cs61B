@@ -3,7 +3,7 @@ package tester;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import edu.princeton.cs.introcs.StdRandom;
-/** Demos the version of assertEquals with a String message. */
+/** 演示带 String 消息的 assertEquals 版本。 */
 public class AssertEqualsStringDemo {
     @Test
     public void test1() {
@@ -14,7 +14,7 @@ public class AssertEqualsStringDemo {
                      expected, actual);
     }
 
-    /** This main method is optional. */
+    /** 这个 main 方法是可选的。 */
     public static void main(String[] args) {
         jh61b.junit.TestRunner.runTests(AssertEqualsStringDemo.class);
     }

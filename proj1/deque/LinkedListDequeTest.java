@@ -8,10 +8,10 @@ import static org.junit.Assert.*;
 public class LinkedListDequeTest {
 
     @Test
-    /** Adds a few things to the list, checking isEmpty() and size() are correct,
-     * finally printing the results.
+    /** 向列表中添加一些东西，检查 isEmpty() 和 size() 是否正确，
+     * 最后打印结果。
      *
-     * && is the "and" operation. */
+     * && 是"与（and）"运算。 */
     public void addIsEmptySizeTest() {
 
         System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
@@ -21,8 +21,8 @@ public class LinkedListDequeTest {
 		assertTrue("A newly initialized LLDeque should be empty", lld1.isEmpty());
 		lld1.addFirst("front");
 
-		// The && operator is the same as "and" in Python.
-		// It's a binary operator that returns true if both arguments true, and false otherwise.
+		// && 运算符与 Python 中的 "and" 相同。
+		// 它是一个二元运算符，当两个参数都为 true 时返回 true，否则返回 false。
         assertEquals(1, lld1.size());
         assertFalse("lld1 should now contain 1 item", lld1.isEmpty());
 
@@ -38,27 +38,27 @@ public class LinkedListDequeTest {
     }
 
     @Test
-    /** Adds an item, then removes an item, and ensures that dll is empty afterwards. */
+    /** 添加一个元素，然后移除一个元素，并确保之后 deque 为空。 */
     public void addRemoveTest() {
 
         System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
         /*
         LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
-		// should be empty
+		// 应该为空
 		assertTrue("lld1 should be empty upon initialization", lld1.isEmpty());
 
 		lld1.addFirst(10);
-		// should not be empty
+		// 不应该为空
 		assertFalse("lld1 should contain 1 item", lld1.isEmpty());
 
 		lld1.removeFirst();
-		// should be empty
+		// 应该为空
 		assertTrue("lld1 should be empty after removal", lld1.isEmpty());
         */
     }
 
     @Test
-    /* Tests removing from an empty deque */
+    /* 测试从空 deque 中移除元素 */
     public void removeEmptyTest() {
 
         System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
@@ -81,7 +81,7 @@ public class LinkedListDequeTest {
     }
 
     @Test
-    /* Check if you can create LinkedListDeques with different parameterized types*/
+    /* 检查你能否创建具有不同参数化类型的 LinkedListDeque */
     public void multipleParamTest() {
 
         /*
@@ -100,7 +100,7 @@ public class LinkedListDequeTest {
     }
 
     @Test
-    /* check if null is return when removing from an empty LinkedListDeque. */
+    /* 检查从空 LinkedListDeque 中移除时是否返回 null。 */
     public void emptyNullReturnTest() {
 
         System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
@@ -116,7 +116,7 @@ public class LinkedListDequeTest {
     }
 
     @Test
-    /* Add large number of elements to deque; check if order is correct. */
+    /* 向 deque 中添加大量元素；检查顺序是否正确。 */
     public void bigLLDequeTest() {
 
         System.out.println("Make sure to uncomment the lines below (and delete this print statement).");

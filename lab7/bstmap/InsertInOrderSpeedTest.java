@@ -8,21 +8,20 @@ import java.util.Scanner;
 import edu.princeton.cs.algs4.Stopwatch;
 
 /**
- * Performs a timing test on three different set implementations.
- * For BSTMap purposes assumes that <K,V> are <String, Integer> pairs.
+ * 对三种不同的集合实现执行计时测试。
+ * 对于 BSTMap 而言，假定 <K,V> 是 <String, Integer> 键值对。
  *
  * @author Josh Hug
  * @author Brendan Hu
  */
 public class InsertInOrderSpeedTest {
     /**
-     * Requests user input and performs tests of three different set
-     * implementations. ARGS is unused.
+     * 请求用户输入，并对三种不同的集合实现执行测试。ARGS 未使用。
      */
     public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
 
-        // borrow waitForPositiveInt(Scanner input) from InsertRandomSpeedTest
+        // 借用 InsertRandomSpeedTest 中的 waitForPositiveInt(Scanner input)
         InsertRandomSpeedTest i = new InsertRandomSpeedTest();
         System.out.println("This program inserts lexicographically "
                 + "increasing Strings into Maps as <String, Integer> pairs.");
@@ -43,8 +42,8 @@ public class InsertInOrderSpeedTest {
     }
 
     /**
-     * Returns time needed to put N strings into a Map61B in increasing order.
-     * makes use of StringUtils.nextString(String s)
+     * 返回按递增顺序将 N 个字符串放入 Map61B 所需的时间。
+     * 利用了 StringUtils.nextString(String s)
      */
     public static double insertInOrder(Map61B<String, Integer> map61B, int N) {
         Stopwatch sw = new Stopwatch();
@@ -57,7 +56,7 @@ public class InsertInOrderSpeedTest {
     }
 
     /**
-     * Returns time needed to put N strings into TreeMap in increasing order.
+     * 返回按递增顺序将 N 个字符串放入 TreeMap 所需的时间。
      */
     public static double insertInOrder(TreeMap<String, Integer> ts, int N) {
         Stopwatch sw = new Stopwatch();
@@ -80,9 +79,9 @@ public class InsertInOrderSpeedTest {
     }
 
     /**
-     * Attempts to insert N in-order strings of length L into map,
-     * Prints time of the N insert calls, otherwise
-     * Prints a nice message about the error
+     * 尝试将 N 个按顺序排列的、长度为 L 的字符串插入 map，
+     * 打印 N 次插入调用所耗的时间，否则
+     * 打印一条关于错误的友好消息
      */
     public static void timeInOrderMap61B(Map61B<String, Integer> map, int N) {
         try {
@@ -96,9 +95,9 @@ public class InsertInOrderSpeedTest {
     }
 
     /**
-     * Attempts to insert N in-order strings of length L into TreeMap,
-     * Prints time of the N insert calls, otherwise
-     * Prints a nice message about the error
+     * 尝试将 N 个按顺序排列的、长度为 L 的字符串插入 TreeMap，
+     * 打印 N 次插入调用所耗的时间，否则
+     * 打印一条关于错误的友好消息
      */
     public static void timeInOrderTreeMap(TreeMap<String, Integer> treeMap, int N) {
         try {
@@ -112,9 +111,9 @@ public class InsertInOrderSpeedTest {
     }
 
     /**
-     * Attempts to insert N in-order strings of length L into HashMap,
-     * Prints time of the N insert calls, otherwise
-     * Prints a nice message about the error
+     * 尝试将 N 个按顺序排列的、长度为 L 的字符串插入 HashMap，
+     * 打印 N 次插入调用所耗的时间，否则
+     * 打印一条关于错误的友好消息
      */
     public static void timeInOrderHashMap(HashMap<String, Integer> hashMap, int N) {
         try {
@@ -127,11 +126,11 @@ public class InsertInOrderSpeedTest {
         }
     }
 
-    /* ---------------------- Private methods ---------------------- */
+    /* ---------------------- 私有方法 ---------------------- */
 
     /**
-     * To be called after catching a StackOverflowError
-     * Prints the error with corresponding N and L
+     * 在捕获 StackOverflowError 之后调用
+     * 打印带有相应 N 和 L 的错误
      */
     private static void printInfoOnStackOverflow(int N) {
         System.out.println("--Stack Overflow -- couldn't add "

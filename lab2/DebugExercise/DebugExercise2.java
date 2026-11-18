@@ -1,15 +1,15 @@
 package DebugExercise;
 
 /**
- * Exercise to showcase the step over button.
- * Code adapted from https://stackoverflow.com/questions/4895173/bitwise-multiply-and-add-in-java and https://stackoverflow.com/questions/1533131/what-useful-bitwise-operator-code-tricks-should-a-developer-know-about
+ * 用于展示步过（step over）按钮的练习。
+ * 代码改编自 https://stackoverflow.com/questions/4895173/bitwise-multiply-and-add-in-java 与 https://stackoverflow.com/questions/1533131/what-useful-bitwise-operator-code-tricks-should-a-developer-know-about
  */
 public class DebugExercise2 {
-    /** Returns the max of a and b. Do not step into this function. */
+    /** 返回 a 与 b 中的最大值。不要步入（step into）此函数。 */
     public static int max(int a, int b) {
         int w = (b - a) >> 31;
-        /* If you're stepping into this function, click the
-           step out button because you're not going to learn anything. */
+        /* 如果你步入了此函数，请点击
+           步出（step out）按钮，因为你不会学到任何东西。 */
         int z = ~(b - a) >> 31;
 
         int max = b & w | a & z;
@@ -17,11 +17,11 @@ public class DebugExercise2 {
     }
 
 
-    /** Returns the sum of a and b. Do not step into this function. */
+    /** 返回 a 与 b 的和。不要步入（step into）此函数。 */
     public static int add(int a, int b) {
         int x = a, y = b;
-        /* If you're stepping into this function, click the
-           step out button because you're not going to learn anything. */
+        /* 如果你步入了此函数，请点击
+           步出（step out）按钮，因为你不会学到任何东西。 */
         int xor, and, temp;
         and = x & y;
         xor = x ^ y;
@@ -35,9 +35,9 @@ public class DebugExercise2 {
         return xor;
     }
 
-    /** Returns a new array where entry i is the max of
-     * a[i] and b[i]. For example, if a = {1, -10, 3}
-     * and b = {0, 20, 5}, this function will return {1, 20, 5}.
+    /** 返回一个新数组，其中第 i 项是 a[i] 与 b[i] 中的最大值。
+     * 例如，若 a = {1, -10, 3} 且 b = {0, 20, 5}，
+     * 此函数将返回 {1, 20, 5}。
      * */
     public static int[] arrayMax(int[] a, int[] b) {
         if (a.length != b.length) {
@@ -53,7 +53,7 @@ public class DebugExercise2 {
         return returnArray;
     }
 
-    /** Returns the sum of all elements in x. */
+    /** 返回 x 中所有元素的和。 */
     public static int arraySum(int[] x) {
         int i = 0;
         int sum = 0;
@@ -64,9 +64,9 @@ public class DebugExercise2 {
         return sum;
     }
 
-    /** Returns the sum of the element-wise max of a and b.
-     *  For example if a = {2, 0, 10, 14} and b = {-5, 5, 20, 30},
-     *  the result should be 57.
+    /** 返回 a 与 b 逐元素最大值的总和。
+     *  例如，若 a = {2, 0, 10, 14} 且 b = {-5, 5, 20, 30}，
+     *  结果应为 57。
      * */
     public static int sumOfElementwiseMaxes(int[] a, int[] b) {
         int[] maxes = arrayMax(a, b);

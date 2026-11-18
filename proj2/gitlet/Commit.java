@@ -1,26 +1,26 @@
 package gitlet;
 
-// TODO: any imports you need here
+// TODO: 在此处填写你需要的任何 import
 
-import java.util.Date; // TODO: You'll likely use this in this class
+import java.util.Date; // TODO: 你很可能在本类中用到它
 
-/** Represents a gitlet commit object.
- *  TODO: It's a good idea to give a description here of what else this Class
- *  does at a high level.
+/** 表示一个 gitlet commit 对象。
+ *  TODO: 在这里从高层描述一下这个类还做了
+ *  哪些事，是个好主意。
  *
  *  @author TODO
  */
 public class Commit {
     /**
-     * TODO: add instance variables here.
+     * TODO: 在此处添加实例变量。
      *
-     * List all instance variables of the Commit class here with a useful
-     * comment above them describing what that variable represents and how that
-     * variable is used. We've provided one example for `message`.
+     * 在此列出 Commit 类的所有实例变量，并在每个变量上方附上一段
+     * 有用的注释，描述该变量代表什么以及如何
+     * 使用。我们已经为 `message` 提供了一个示例。
      */
 
-    /** The message of this Commit. */
+    /** 此 Commit 的消息。 */
     private String message;
 
-    /* TODO: fill in the rest of this class. */
+    /* TODO: 填写本类的其余部分。 */
 }

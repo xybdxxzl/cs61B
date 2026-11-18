@@ -3,16 +3,16 @@ package game2048;
 import java.util.Observer;
 import java.util.Observable;
 
-/** An observer that prints changes to a Model.
+/** 一个观察者（observer），用于打印 Model 的变化。
  *  @author P. N. Hilfinger
  */
 class BoardLogger implements Observer {
 
-    /** A line to separate each move. */
+    /** 用于分隔每次移动的一条线。 */
     private static final String LINE = "---------------------";
 
     @Override
-    /** Prints the board state and how it was changed after each move. */
+    /** 在每次移动后打印棋盘状态及其变化方式。 */
     public void update(Observable obs, Object arg) {
         Model model = (Model) obs;
         String direction;

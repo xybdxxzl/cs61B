@@ -3,17 +3,17 @@ package byow.TileEngine;
 import java.awt.Color;
 
 /**
- * Contains constant tile objects, to avoid having to remake the same tiles in different parts of
- * the code.
+ * 包含常量 tile 对象，以避免在代码的不同部分
+ * 重复创建相同的 tile。
  *
- * You are free to (and encouraged to) create and add your own tiles to this file. This file will
- * be turned in with the rest of your code.
+ * 你可以自由地（并且我们鼓励你）创建自己的 tile 并添加到本文件。本文件将
+ * 随你的其余代码一起提交。
  *
- * Ex:
+ * 例如：
  *      world[x][y] = Tileset.FLOOR;
  *
- * The style checker may crash when you try to style check this file due to use of unicode
- * characters. This is OK.
+ * 由于使用了 unicode 字符，当你尝试对本文件做风格检查（style check）时，
+ * 风格检查器可能会崩溃。这没关系。
  */
 
 public class Tileset {

@@ -3,9 +3,9 @@ package tester;
 import java.util.LinkedList;
 
 /**
- * Isn't this solution kinda... cheating? Yes.
- * The aesthete will be especially alarmed by the fact that this
- * supposed ArrayDeque is actually using a LinkedList. SAD!
+ * 这个解法是不是有点……作弊？是的。
+ * 尤其会让有审美洁癖的人震惊的是：这个本该是
+ * ArrayDeque 的东西实际上用的是 LinkedList。可悲！（SAD!）
  */
 public class ArrayDequeSolution<Item> extends LinkedList<Item> {
     public void printDeque() {

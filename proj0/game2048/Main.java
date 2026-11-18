@@ -4,19 +4,19 @@ import java.util.Random;
 
 import ucb.util.CommandArgs;
 
-/** The main class for the 2048 game.
+/** 2048 游戏的主类。
  *  @author P. N. Hilfinger
  */
 public class Main {
 
-    /** Number of squares on the side of a board. */
+    /** 棋盘一边的格子数。 */
     static final int BOARD_SIZE = 4;
-    /** Probability of choosing 2 as random tile (as opposed to 4). */
+    /** 选择 2 作为随机方块（而非 4）的概率。 */
     static final double TILE2_PROBABILITY = 0.9;
 
-    /** The main program.  ARGS may contain the options --seed=NUM,
-     *  (random seed); --log (record moves and random tiles
-     *  selected.). */
+    /** 主程序。ARGS 可包含选项 --seed=NUM
+     *  （随机种子）；--log（记录移动和所选的
+     *  随机方块）。 */
     public static void main(String... args) {
         CommandArgs options =
             new CommandArgs("--seed=(\\d+) --log=(.+)",

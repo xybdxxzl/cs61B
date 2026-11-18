@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 /**
- * Created by Boren Tsai and Arjun Sahai.
+ * 由 Boren Tsai 和 Arjun Sahai 创建。
  */
 
 public class BYOWClient {
@@ -28,7 +28,7 @@ public class BYOWClient {
     static int magic = Integer.MIN_VALUE;
 
     /*
-    Open socket, input/output streams, and create buffered writer & data input streams.
+    打开 socket、输入/输出流，并创建带缓冲的 writer 与 data input stream。
      */
     public void startConnection(String ip, int port) throws IOException {
         clientReadSocket = new Socket(ip, port);
@@ -39,12 +39,12 @@ public class BYOWClient {
     }
 
     /*
-    Check that the server has acknowledged that it is quitting in a nonblocking fasion
+    以非阻塞方式检查服务器是否已确认它正在退出
      */
     private boolean shouldClose() throws IOException {
         if (in.ready()) {
             char[] buf = new char[4];
-            in.read(buf, 0, 4); // block client
+            in.read(buf, 0, 4); // 阻塞客户端
             System.out.println(String.copyValueOf(buf));
             return true;
         }
@@ -52,7 +52,7 @@ public class BYOWClient {
     }
 
     /*
-    Close reader and writer then close socket.
+    关闭 reader 和 writer，然后关闭 socket。
      */
     private void stopConnection() throws IOException {
         dis.close();
@@ -62,8 +62,8 @@ public class BYOWClient {
     }
 
     /*
-    Non Blocking
-    Sends a String Command to the server i.e. W, A, S, D, etc.
+    非阻塞
+    向服务器发送一个字符串命令，例如 W、A、S、D 等。
      */
     private void sendCommand(String msg) throws IOException {
         out.write(msg);
@@ -71,9 +71,9 @@ public class BYOWClient {
     }
 
     /*
-    Blocking
-    Displays a canvas if the server has sent the client something to read
-    i.e. The server has sent a png file to the client
+    阻塞
+    如果服务器向客户端发送了可供读取的内容，则显示画布
+    即服务器已向客户端发送了一个 png 文件
      */
     private void showCanvas() throws IOException {
         if (dis.available() > 0) {
@@ -97,7 +97,7 @@ public class BYOWClient {
 
             FileOutputStream fos = new FileOutputStream(newFile);
 
-            // wait for incoming file size
+            // 等待传入的文件大小
             long size = dis.readLong();
 
             int bytes;
@@ -106,7 +106,7 @@ public class BYOWClient {
                 fos.write(buffer, 0, bytes);
                 size -= bytes;
             }
-            // Write all buffered bytes into the file
+            // 将所有缓冲的字节写入文件
             fos.flush();
 
             StdDraw.picture(width / 2, height / 2, canvasPath + magic + ".png");
@@ -131,7 +131,7 @@ public class BYOWClient {
         int port = scanner.nextInt();
 
         BYOWClient client = new BYOWClient();
-        client.startConnection(ip, port); //ip port changes depending on link supplied by ngrok
+        client.startConnection(ip, port); //ip 端口会根据 ngrok 提供的链接而变化
         client.showCanvas();
         char command;
 

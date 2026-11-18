@@ -1,13 +1,13 @@
 package game2048;
 
-/** Represents the image of a numbered tile on a 2048 board.
+/** 表示 2048 棋盘上一个带数字方块的形象。
  *  @author P. N. Hilfinger.
  */
 public class Tile {
 
-    /** A new tile with VALUE as its value at (ROW, COL).  This
-     *  constructor is private, so all tiles are created by the
-     *  factory methods create, move, and merge. */
+    /** 一个位于 (ROW, COL)、以 VALUE 为值的新方块。此
+     *  构造器是私有的，因此所有方块都由工厂方法
+     *  create、move 和 merge 创建。 */
     private Tile(int value, int col, int row) {
         this.value = value;
         this.row = row;
@@ -15,49 +15,49 @@ public class Tile {
         this.next = null;
     }
 
-    /** Return my current row. */
+    /** 返回我当前的行号。 */
     public int row() {
         return row;
     }
 
-    /** Return my current column. */
+    /** 返回我当前的列号。 */
     public int col() {
         return col;
     }
 
-    /** Return the value supplied to my constructor. */
+    /** 返回传给构造器的值。 */
     public int value() {
         return value;
     }
 
-    /** Return my next state.  Before I am moved or merged, I am my
-     *  own successor. */
+    /** 返回我的下一状态。在我被移动或合并之前，我就是
+     *  我自己的后继。 */
     public Tile next() {
         return next == null ? this : next;
     }
 
-    /** Return a new tile at (ROW, COL) with value VALUE. */
+    /** 返回一个位于 (ROW, COL)、值为 VALUE 的新方块。 */
     public static Tile create(int value, int col, int row) {
         return new Tile(value, col, row);
     }
 
-    /** Return the result of moving me to (COL, ROW). */
+    /** 返回将我移动到 (COL, ROW) 的结果。 */
     public Tile move(int col, int row) {
         Tile result = new Tile(value, col, row);
         next = result;
         return result;
     }
 
-    /** Return the result of merging OTHERTILE with me after moving to
-     *  (COL, ROW). */
+    /** 返回在移动到 (COL, ROW) 之后将 OTHERTILE 与我合并
+     *  的结果。 */
     public Tile merge(int col, int row, Tile otherTile) {
         assert value == otherTile.value();
         next = otherTile.next = new Tile(2 * value, col, row);
         return next;
     }
 
-    /** Return the distance in rows or columns between me and my successor
-     *  tile (0 if I have no successor). */
+    /** 返回我与后继方块之间的行或列距离
+     *  （如果我没有后继则为 0）。 */
     public int distToNext() {
         if (next == null) {
             return 0;
@@ -72,12 +72,12 @@ public class Tile {
         return String.format("%d@(%d, %d)", value(), col(), row());
     }
 
-    /** My value. */
+    /** 我的值。 */
     private final int value;
 
-    /** My last position on the board. */
+    /** 我在棋盘上的最后位置。 */
     private final int row, col;
 
-    /** Successor tile: one I am moved to or merged with. */
+    /** 后继方块：我移动后或合并后的那个方块。 */
     private Tile next;
 }

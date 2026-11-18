@@ -4,17 +4,17 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/** Tests the emptySpaceExists() static method of Model.
+/** 测试 Model 的 emptySpaceExists() 静态方法。
  *
  * @author Omar Khan
  */
 public class TestEmptySpace {
 
-    /** The Board that we'll be testing on. */
+    /** 我们将要在其上进行测试的 Board。 */
     static Board b;
 
     @Test
-    /** Note that this isn't a possible board state. */
+    /** 注意，这并不是一个可能出现的棋盘状态。 */
     public void testCompletelyEmpty() {
         int[][] rawVals = new int[][] {
                 {0, 0, 0, 0},
@@ -29,7 +29,7 @@ public class TestEmptySpace {
     }
 
     @Test
-    /** Tests a board that is completely full except for the top row. */
+    /** 测试一个除了顶行以外完全填满的棋盘。 */
     public void testEmptyTopRow() {
         int[][] rawVals = new int[][] {
                 {0, 0, 0, 0},
@@ -44,7 +44,7 @@ public class TestEmptySpace {
     }
 
     @Test
-    /** Tests a board that is completely full except for the bottom row. */
+    /** 测试一个除了底行以外完全填满的棋盘。 */
     public void testEmptyBottomRow() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 4},
@@ -60,7 +60,7 @@ public class TestEmptySpace {
 
 
     @Test
-    /** Tests a board that is completely full except for the left column. */
+    /** 测试一个除了左列以外完全填满的棋盘。 */
     public void testEmptyLeftCol() {
         int[][] rawVals = new int[][] {
                 {0, 4, 2, 4},
@@ -76,7 +76,7 @@ public class TestEmptySpace {
     }
 
     @Test
-    /** Tests a board that is completely full except for the right column. */
+    /** 测试一个除了右列以外完全填满的棋盘。 */
     public void testEmptyRightCol() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 0},
@@ -92,7 +92,7 @@ public class TestEmptySpace {
     }
 
     @Test
-    /** Tests a completely full board except one piece. */
+    /** 测试一个除了一个方块以外完全填满的棋盘。 */
     public void testAlmostFullBoard() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 4},
@@ -108,9 +108,9 @@ public class TestEmptySpace {
     }
 
     @Test
-    /** Tests a completely full board.
-     * The game isn't over since you can merge, but the emptySpaceExists method
-     * should only look for empty space (and not adjacent values). */
+    /** 测试一个完全填满的棋盘。
+     * 由于你可以合并，游戏尚未结束，但 emptySpaceExists 方法
+     * 应只查找空格子（而不查找相邻的值）。 */
     public void testFullBoard() {
         int[][] rawVals = new int[][] {
                 {2, 2, 2, 2},
@@ -125,7 +125,7 @@ public class TestEmptySpace {
     }
 
     @Test
-    /** Tests a completely full board. */
+    /** 测试一个完全填满的棋盘。 */
     public void testFullBoardNoMerge() {
         int[][] rawVals = new int[][] {
                 {2, 4, 2, 4},

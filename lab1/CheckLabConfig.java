@@ -89,8 +89,7 @@ public class CheckLabConfig {
 			} else {
 				checkConfig(false);
 			}
-		} // for future reference in case we need to test configurations separately
-		     for Mac OS, Catalina, Linux, etc*/
+		} // 留作参考，以备将来需要针对 Mac OS、Catalina、Linux 等分别测试配置时使用*/
 
 		System.out.println("Your system appears to be configured correctly. You've completed lab 1 setup.");
 	}

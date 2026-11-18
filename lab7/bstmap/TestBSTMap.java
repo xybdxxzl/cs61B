@@ -3,7 +3,7 @@ package bstmap;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-/** Tests by Brendan Hu, Spring 2015, revised for 2016 by Josh Hug */
+/** 由 Brendan Hu 于 2015 年春季编写，2016 年由 Josh Hug 修订的测试 */
 public class TestBSTMap {
 
   	@Test
@@ -18,13 +18,13 @@ public class TestBSTMap {
 	    }
     }
 
-    //assumes put/size/containsKey/get work
+    //假定 put/size/containsKey/get 正常工作
     @Test
     public void sanityClearTest() {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
         for (int i = 0; i < 455; i++) {
             b.put("hi" + i, 1+i);
-            //make sure put is working via containsKey and get
+            //通过 containsKey 和 get 确保 put 正常工作
             assertTrue( null != b.get("hi" + i) && (b.get("hi"+i).equals(1+i))
                         && b.containsKey("hi" + i));
         }
@@ -36,7 +36,7 @@ public class TestBSTMap {
         }
     }
 
-    // assumes put works
+    // 假定 put 正常工作
     @Test
     public void sanityContainsKeyTest() {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
@@ -45,7 +45,7 @@ public class TestBSTMap {
         assertTrue(b.containsKey("waterYouDoingHere"));
     }
 
-    // assumes put works
+    // 假定 put 正常工作
     @Test
     public void sanityGetTest() {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
@@ -59,7 +59,7 @@ public class TestBSTMap {
         assertEquals(2, b.size());
     }
 
-    // assumes put works
+    // 假定 put 正常工作
     @Test
     public void sanitySizeTest() {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
@@ -71,7 +71,7 @@ public class TestBSTMap {
         assertEquals(456, b.size());
     }
 
-    //assumes get/containskey work
+    //假定 get/containskey 正常工作
     @Test
     public void sanityPutTest() {
     	BSTMap<String, Integer> b = new BSTMap<String, Integer>();
@@ -79,7 +79,7 @@ public class TestBSTMap {
         assertTrue(b.containsKey("hi") && b.get("hi") != null);
     }
 
-    //assumes put works
+    //假定 put 正常工作
     @Test
     public void containsKeyNullTest() {
         BSTMap<String, Integer> b = new BSTMap<String, Integer>();

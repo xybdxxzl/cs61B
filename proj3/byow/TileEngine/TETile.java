@@ -8,33 +8,33 @@ import edu.princeton.cs.introcs.StdDraw;
 import byow.Core.RandomUtils;
 
 /**
- * The TETile object is used to represent a single tile in your world. A 2D array of tiles make up a
- * board, and can be drawn to the screen using the TERenderer class.
+ * TETile 对象用于表示你的世界中的单个 tile。由 tile 构成的二维数组组成
+ * 一个棋盘，可以使用 TERenderer 类将其绘制到屏幕上。
  *
- * All TETile objects must have a character, textcolor, and background color to be used to represent
- * the tile when drawn to the screen. You can also optionally provide a path to an image file of an
- * appropriate size (16x16) to be drawn in place of the unicode representation. If the image path
- * provided cannot be found, draw will fallback to using the provided character and color
- * representation, so you are free to use image tiles on your own computer.
+ * 所有 TETile 对象都必须有一个字符、文字颜色和背景颜色，用于在
+ * 绘制到屏幕时表示该 tile。你还可以选择提供一张合适大小（16x16）的
+ * 图片文件的路径，用它替代 unicode 表示来绘制。如果提供的图片路径
+ * 找不到，draw 将回退为使用所提供的字符和颜色表示，
+ * 因此你可以放心地在你自己的电脑上使用图片 tile。
  *
- * The provided TETile is immutable, i.e. none of its instance variables can change. You are welcome
- * to make your TETile class mutable, if you prefer.
+ * 所提供的 TETile 是不可变的，即它的任何实例变量都不能改变。如果你愿意，
+ * 你可以自行将 TETile 类改为可变的。
  */
 
 public class TETile {
-    private final char character; // Do not rename character or the autograder will break.
+    private final char character; // 不要重命名 character，否则自动评分系统会出错。
     private final Color textColor;
     private final Color backgroundColor;
     private final String description;
     private final String filepath;
 
     /**
-     * Full constructor for TETile objects.
-     * @param character The character displayed on the screen.
-     * @param textColor The color of the character itself.
-     * @param backgroundColor The color drawn behind the character.
-     * @param description The description of the tile, shown in the GUI on hovering over the tile.
-     * @param filepath Full path to image to be used for this tile. Must be correct size (16x16)
+     * TETile 对象的完整构造器。
+     * @param character 显示在屏幕上的字符。
+     * @param textColor 字符本身的颜色。
+     * @param backgroundColor 绘制在字符背后的颜色。
+     * @param description tile 的描述，在 GUI 中悬停于该 tile 上时显示。
+     * @param filepath 用于此 tile 的图片的完整路径。必须是正确的大小（16x16）
      */
     public TETile(char character, Color textColor, Color backgroundColor, String description,
                   String filepath) {
@@ -46,12 +46,12 @@ public class TETile {
     }
 
     /**
-     * Constructor without filepath. In this case, filepath will be null, so when drawing, we
-     * will not even try to draw an image, and will instead use the provided character and colors.
-     * @param character The character displayed on the screen.
-     * @param textColor The color of the character itself.
-     * @param backgroundColor The color drawn behind the character.
-     * @param description The description of the tile, shown in the GUI on hovering over the tile.
+     * 不带 filepath 的构造器。此时 filepath 将为 null，因此绘制时我们
+     * 甚至不会尝试绘制图片，而是使用所提供的字符和颜色。
+     * @param character 显示在屏幕上的字符。
+     * @param textColor 字符本身的颜色。
+     * @param backgroundColor 绘制在字符背后的颜色。
+     * @param description tile 的描述，在 GUI 中悬停于该 tile 上时显示。
      */
     public TETile(char character, Color textColor, Color backgroundColor, String description) {
         this.character = character;
@@ -62,9 +62,9 @@ public class TETile {
     }
 
     /**
-     * Creates a copy of TETile t, except with given textColor.
-     * @param t tile to copy
-     * @param textColor foreground color for tile copy
+     * 创建 TETile t 的一个副本，只是使用给定的 textColor。
+     * @param t 要复制的 tile
+     * @param textColor tile 副本的前景颜色
      */
     public TETile(TETile t, Color textColor) {
         this(t.character, textColor, t.backgroundColor, t.description, t.filepath);
@@ -72,14 +72,14 @@ public class TETile {
 
 
     /**
-     * Draws the tile to the screen at location x, y. If a valid filepath is provided,
-     * we draw the image located at that filepath to the screen. Otherwise, we fall
-     * back to the character and color representation for the tile.
+     * 在位置 x, y 处将 tile 绘制到屏幕上。如果提供了有效的 filepath，
+     * 我们就将位于该 filepath 的图片绘制到屏幕上。否则，我们回退
+     * 到该 tile 的字符和颜色表示。
      *
-     * Note that the image provided must be of the right size (16x16). It will not be
-     * automatically resized or truncated.
-     * @param x x coordinate
-     * @param y y coordinate
+     * 注意，所提供的图片必须是正确的大小（16x16）。它不会被
+     * 自动缩放或裁剪。
+     * @param x x 坐标
+     * @param y y 坐标
      */
     public void draw(double x, double y) {
         if (filepath != null) {
@@ -87,8 +87,8 @@ public class TETile {
                 StdDraw.picture(x + 0.5, y + 0.5, filepath);
                 return;
             } catch (IllegalArgumentException e) {
-                // Exception happens because the file can't be found. In this case, fail silently
-                // and just use the character and background color for the tile.
+                // 该异常是因为找不到文件而发生的。在这种情况下，静默失败，
+                // 并只使用该 tile 的字符和背景颜色。
             }
         }
 
@@ -98,31 +98,31 @@ public class TETile {
         StdDraw.text(x + 0.5, y + 0.5, Character.toString(character()));
     }
 
-    /** Character representation of the tile. Used for drawing in text mode.
-     * @return character representation
+    /** tile 的字符表示。用于文本模式下绘制。
+     * @return 字符表示
      */
     public char character() {
         return character;
     }
 
     /**
-     * Description of the tile. Useful for displaying mouseover text or
-     * testing that two tiles represent the same type of thing.
-     * @return description of the tile
+     * tile 的描述。用于显示鼠标悬停文本，或
+     * 测试两个 tile 是否表示同一类东西。
+     * @return tile 的描述
      */
     public String description() {
         return description;
     }
 
     /**
-     * Creates a copy of the given tile with a slightly different text color. The new
-     * color will have a red value that is within dr of the current red value,
-     * and likewise with dg and db.
-     * @param t the tile to copy
-     * @param dr the maximum difference in red value
-     * @param dg the maximum difference in green value
-     * @param db the maximum difference in blue value
-     * @param r the random number generator to use
+     * 创建给定 tile 的一个副本，其文字颜色略有不同。新颜色
+     * 的红色值将在当前红色值的 dr 范围内，
+     * dg 和 db 同理。
+     * @param t 要复制的 tile
+     * @param dr 红色值的最大差异
+     * @param dg 绿色值的最大差异
+     * @param db 蓝色值的最大差异
+     * @param r 要使用的随机数生成器
      */
     public static TETile colorVariant(TETile t, int dr, int dg, int db, Random r) {
         Color oldColor = t.textColor;
@@ -138,19 +138,18 @@ public class TETile {
     private static int newColorValue(int v, int dv, Random r) {
         int rawNewValue = v + RandomUtils.uniform(r, -dv, dv + 1);
 
-        // make sure value doesn't fall outside of the range 0 to 255.
+        // 确保该值不会落在 0 到 255 的范围之外。
         int newValue = Math.min(255, Math.max(0, rawNewValue));
         return newValue;
     }
 
     /**
-     * Converts the given 2D array to a String. Handy for debugging.
-     * Note that since y = 0 is actually the bottom of your world when
-     * drawn using the tile rendering engine, this print method has to
-     * print in what might seem like backwards order (so that the 0th
-     * row gets printed last).
-     * @param world the 2D world to print
-     * @return string representation of the world
+     * 将给定的二维数组转换为 String。便于调试。
+     * 注意，由于使用 tile 渲染引擎绘制时，y = 0 实际上是你的世界的
+     * 底部，因此这个打印方法必须以看起来像是倒序的顺序打印
+     * （这样第 0 行会最后被打印）。
+     * @param world 要打印的二维世界
+     * @return 世界的字符串表示
      */
     public static String toString(TETile[][] world) {
         int width = world.length;
@@ -171,8 +170,8 @@ public class TETile {
     }
 
     /**
-     * Makes a copy of the given 2D tile array.
-     * @param tiles the 2D array to copy
+     * 创建给定二维 tile 数组的一个副本。
+     * @param tiles 要复制的二维数组
      **/
     public static TETile[][] copyOf(TETile[][] tiles) {
         if (tiles == null) {

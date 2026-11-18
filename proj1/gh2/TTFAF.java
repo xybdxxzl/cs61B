@@ -7,8 +7,8 @@ import java.util.Base64;
 import java.util.zip.GZIPInputStream;
 
 /**
- * This code does some stuff. Run it (with sound on!) to find out what stuff it does!
- * Requires completion of CS 61B Homework 1.
+ * 这段代码会做一些事情。运行它（打开声音！）来看看它做了些什么！
+ * 需要完成 CS 61B Homework 1。
  *
  * @author Eli Lipsitz
  */
@@ -23,7 +23,7 @@ public class TTFAF {
             e.printStackTrace();
         }
 
-        // You can also do this:
+        // 你也可以这样做：
         // GuitarPlayer player = new GuitarPlayer(new java.io.File("path/to/music.mid"));
         // player.play();
     }

@@ -1,8 +1,8 @@
 package student;
 
 /**
- * Created by hug on 2/4/2017.
- * Added isEmpty() default implementation on 2/3/2019.
+ * 由 hug 于 2017 年 2 月 4 日创建。
+ * 于 2019 年 2 月 3 日添加了 isEmpty() 默认实现。
  */
 public interface Deque<Item> {
     void addFirst(Item x);

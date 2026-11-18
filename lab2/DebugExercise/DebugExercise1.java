@@ -1,8 +1,8 @@
 package DebugExercise;
 
 /**
- * Exercise for learning how the debug, breakpoint, and step-into
- * feature work.
+ * 用于学习调试（debug）、断点（breakpoint）以及步入（step-into）
+ * 功能如何运作的练习。
  */
 public class DebugExercise1 {
     public static int divideThenRound(int top, int bottom) {

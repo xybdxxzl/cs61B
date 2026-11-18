@@ -9,7 +9,7 @@ public class IntList {
         rest = r;
     }
 
-    /** Return the size of the list using... recursion! */
+    /** 使用……递归！返回列表的大小 */
     public int size() {
         if (rest == null) {
             return 1;
@@ -17,7 +17,7 @@ public class IntList {
         return 1 + this.rest.size();
     }
 
-    /** Return the size of the list using no recursion! */
+    /** 不使用递归返回列表的大小！ */
     public int iterativeSize() {
         IntList p = this;
         int totalSize = 0;
@@ -28,7 +28,7 @@ public class IntList {
         return totalSize;
     }
 
-    /** Returns the ith item of this IntList. */
+    /** 返回此 IntList 的第 i 个元素。 */
     public int get(int i) {
         if (i == 0) {
             return first;
@@ -36,10 +36,10 @@ public class IntList {
         return rest.get(i - 1);
     }
 
-    /** Method to return a string representation of an IntList */
+    /** 返回 IntList 字符串表示形式的方法 */
     public String toString() {
         if (rest == null) {
-            // Converts an Integer to a String!
+            // 将 Integer 转换为 String！
             return String.valueOf(first);
         } else {
             return first + " -> " + rest.toString();
@@ -47,14 +47,14 @@ public class IntList {
     }
 
     /**
-     * Method to create an IntList from an argument list.
-     * You don't have to understand this code. We have it here
-     * because it's convenient with testing. It's used like this:
+     * 根据参数列表创建 IntList 的方法。
+     * 你不需要理解这段代码。我们把它放在这里
+     * 是因为它便于测试。它的用法如下：
      *
      * IntList myList = IntList.of(1, 2, 3, 4, 5);
-     * will create an IntList 1 -> 2 -> 3 -> 4 -> 5 -> null.
+     * 将创建一个 IntList 1 -> 2 -> 3 -> 4 -> 5 -> null。
      *
-     * You can pass in any number of arguments to IntList.of and it will work:
+     * 你可以向 IntList.of 传入任意数量的参数，它都能正常工作：
      * IntList mySmallerList = IntList.of(1, 4, 9);
      */
     public static IntList of(int ...argList) {

@@ -9,7 +9,7 @@ import byow.TileEngine.Tileset;
 import java.util.Random;
 
 /**
- * Draws a world consisting of hexagonal regions.
+ * 绘制一个由六边形区域组成的世界。
  */
 public class HexWorld {
 }

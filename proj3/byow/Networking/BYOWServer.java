@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.nio.file.Paths;
 
 /**
- * Created by Arjun Sahai and Boren Tsai.
+ * 由 Arjun Sahai 和 Boren Tsai 创建。
  */
 
 public class BYOWServer {
@@ -27,7 +27,7 @@ public class BYOWServer {
     public BYOWServer(int port) throws IOException {
         serverSocket = new ServerSocket(port);
         System.out.println("Server started. Waiting for client to connect... ");
-        clientWriteSocket = serverSocket.accept(); // block until client connects
+        clientWriteSocket = serverSocket.accept(); // 阻塞，直到客户端连接
         clientStringSocket = serverSocket.accept();
         in = new BufferedReader(new InputStreamReader(clientStringSocket.getInputStream()));
         out = new BufferedWriter(new OutputStreamWriter(clientStringSocket.getOutputStream()));
@@ -44,8 +44,8 @@ public class BYOWServer {
     }
 
     /*
-    This method will check to see if the client is sending a key press to the server
-    This will not block your code
+    此方法将检查客户端是否正在向服务器发送按键
+    这不会阻塞你的代码
      */
     public boolean clientHasKeyTyped() {
         try {
@@ -57,8 +57,8 @@ public class BYOWServer {
     }
 
     /*
-    Gives the next character sent from the client.
-    If the client has not sent anything yet, then this method will block
+    给出客户端发送的下一个字符。
+    如果客户端尚未发送任何内容，则此方法将阻塞
      */
     public char clientNextKeyTyped() {
         try {
@@ -71,7 +71,7 @@ public class BYOWServer {
     }
 
     /*
-    Closes all input/output streams and sockets.
+    关闭所有输入/输出流和 socket。
      */
     public void stopConnection() {
         try {
@@ -88,7 +88,7 @@ public class BYOWServer {
     }
 
     /*
-    Sends world bitmap and, optionally, StdDraw canvas configuration metadata.
+    发送世界位图，以及（可选的）StdDraw 画布配置元数据。
      */
     private void sendCanvas(int width, int height, boolean sendConfig) {
         try {
@@ -103,17 +103,17 @@ public class BYOWServer {
             }
 
 
-            // Save the canvas to a PNG file
+            // 将画布保存为一个 PNG 文件
             StdDraw.save(CANVAS_FILE);
             File canvas = join(CWD, CANVAS_FILE);
 
-            // Send file size and unblock client from waiting
+            // 发送文件大小，使客户端不再等待
             dos.writeLong(canvas.length());
             dos.flush();
 
             FileInputStream fis = new FileInputStream(canvas);
 
-            // break file into chunks and send to client
+            // 将文件分成若干块并发送给客户端
             int bytes;
             byte[] buffer = new byte[4 * 1024];
             while ((bytes = fis.read(buffer)) != -1) {

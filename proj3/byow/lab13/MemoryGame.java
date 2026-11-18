@@ -8,22 +8,22 @@ import java.awt.Font;
 import java.util.Random;
 
 public class MemoryGame {
-    /** The width of the window of this game. */
+    /** 本游戏窗口的宽度。 */
     private int width;
-    /** The height of the window of this game. */
+    /** 本游戏窗口的高度。 */
     private int height;
-    /** The current round the user is on. */
+    /** 用户当前所处的轮次。 */
     private int round;
-    /** The Random object used to randomly generate Strings. */
+    /** 用于随机生成 String 的 Random 对象。 */
     private Random rand;
-    /** Whether or not the game is over. */
+    /** 游戏是否结束。 */
     private boolean gameOver;
-    /** Whether or not it is the player's turn. Used in the last section of the
-     * spec, 'Helpful UI'. */
+    /** 现在是否是玩家的回合。用于 spec 的最后一节
+     * 'Helpful UI'（实用 UI）。 */
     private boolean playerTurn;
-    /** The characters we generate random Strings from. */
+    /** 我们用来生成随机 String 的字符。 */
     private static final char[] CHARACTERS = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-    /** Encouraging phrases. Used in the last section of the spec, 'Helpful UI'. */
+    /** 鼓励性的短语。用于 spec 的最后一节 'Helpful UI'（实用 UI）。 */
     private static final String[] ENCOURAGEMENT = {"You can do this!", "I believe in you!",
                                                    "You got this!", "You're a star!", "Go Bears!",
                                                    "Too easy for you!", "Wow, so impressive!"};
@@ -40,8 +40,8 @@ public class MemoryGame {
     }
 
     public MemoryGame(int width, int height, long seed) {
-        /* Sets up StdDraw so that it has a width by height grid of 16 by 16 squares as its canvas
-         * Also sets up the scale so the top left is (0,0) and the bottom right is (width, height)
+        /* 设置 StdDraw，使其画布为一个宽 width、高 height 的 16x16 方格网格
+         * 同时设置缩放比例，使左上角为 (0,0)，右下角为 (width, height)
          */
         this.width = width;
         this.height = height;
@@ -53,32 +53,32 @@ public class MemoryGame {
         StdDraw.clear(Color.BLACK);
         StdDraw.enableDoubleBuffering();
 
-        //TODO: Initialize random number generator
+        //TODO: 初始化随机数生成器
     }
 
     public String generateRandomString(int n) {
-        //TODO: Generate random string of letters of length n
+        //TODO: 生成长度为 n 的随机字母字符串
         return null;
     }
 
     public void drawFrame(String s) {
-        //TODO: Take the string and display it in the center of the screen
-        //TODO: If game is not over, display relevant game information at the top of the screen
+        //TODO: 取该字符串并将其显示在屏幕中央
+        //TODO: 如果游戏尚未结束，在屏幕顶部显示相关的游戏信息
     }
 
     public void flashSequence(String letters) {
-        //TODO: Display each character in letters, making sure to blank the screen between letters
+        //TODO: 逐字显示 letters 中的每个字符，确保在字符之间清空屏幕
     }
 
     public String solicitNCharsInput(int n) {
-        //TODO: Read n letters of player input
+        //TODO: 读取玩家输入的 n 个字母
         return null;
     }
 
     public void startGame() {
-        //TODO: Set any relevant variables before the game starts
+        //TODO: 在游戏开始前设置任何相关的变量
 
-        //TODO: Establish Engine loop
+        //TODO: 建立 Engine 循环
     }
 
 }

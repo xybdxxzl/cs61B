@@ -2,7 +2,7 @@ package timingtest;
 import edu.princeton.cs.algs4.Stopwatch;
 
 /**
- * Created by hug.
+ * 由 hug 创建。
  */
 public class TimeAList {
     private static void printTimingTable(AList<Integer> Ns, AList<Double> times, AList<Integer> opCounts) {
@@ -22,6 +22,6 @@ public class TimeAList {
     }
 
     public static void timeAListConstruction() {
-        // TODO: YOUR CODE HERE
+        // TODO: 在此编写你的代码（YOUR CODE HERE）
     }
 }

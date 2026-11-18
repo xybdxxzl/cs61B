@@ -2,26 +2,26 @@ package game2048;
 
 import static game2048.Side.*;
 
-/** The input/output and GUI controller for play of a game of 2048.
+/** 2048 游戏对局的输入/输出及 GUI 控制器。
  *  @author P. N. Hilfinger. */
 public class Game {
 
-    /** Controller for a game represented by MODEL, using SOURCE as the
-     *  the source of key inputs and random Tiles. */
+    /** 用于由 MODEL 表示的游戏对局的控制器，使用 SOURCE 作为
+     *  按键输入和随机 Tile 的来源。 */
     public Game(Model model, InputSource source) {
         _model = model;
         _source = source;
         _playing = true;
     }
 
-    /** Return true iff we have not received a Quit command. */
+    /** 当且仅当我们尚未收到 Quit 命令时返回 true。 */
     boolean playing() {
         return _playing;
     }
 
-    /** Clear the board and play one game, until receiving a quit or
-     *  new-game request.  Update the viewer with each added tile or
-     *  change in the board from tilting. */
+    /** 清空棋盘并玩一局游戏，直到收到退出或
+     *  新游戏请求。每当添加方块或棋盘因倾斜而
+     *  发生变化时，更新视图。 */
     void playGame() {
         _model.clear();
         _model.addTile(getValidNewTile());
@@ -56,8 +56,8 @@ public class Game {
         }
     }
 
-    /** Return the side indicated by KEY ("Up", "Down", "Left",
-     *  or "Right"). */
+    /** 返回 KEY 所表示的一侧（"Up"、"Down"、"Left"
+     *  或 "Right"）。 */
     private Side keyToSide(String key) {
         switch (key) {
             case "Up": case "\u2191":
@@ -73,9 +73,9 @@ public class Game {
         }
     }
 
-    /** Return a valid tile, using our source's tile input until finding
-     *  one that fits on the current board. Assumes there is at least one
-     *  empty square on the board. */
+    /** 返回一个有效的方块，使用来源的方块输入，直到找到
+     *  一个能放在当前棋盘上的方块。假定棋盘上至少有一个
+     *  空格子。 */
     private Tile getValidNewTile() {
         while (true) {
             Tile tile = _source.getNewTile(_model.size());
@@ -85,13 +85,13 @@ public class Game {
         }
     }
 
-    /** The playing board. */
+    /** 正在对局的棋盘。 */
     private Model _model;
 
-    /** Input source from standard input. */
+    /** 来自标准输入的输入来源。 */
     private InputSource _source;
 
-    /** True while user is still willing to play. */
+    /** 只要用户仍愿意继续玩就为 true。 */
     private boolean _playing;
 
 }

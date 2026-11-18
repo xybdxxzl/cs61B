@@ -1,23 +1,23 @@
 package Arithmetic;
 
-/** Simple Arithmetic Class.
+/** 简单的算术类。
  * @author Josh Hug
  * */
 public class Arithmetic {
 
-    /** Computes product of two ints.
-     * @param a Value 1
-     * @param b Value 2
-     * @return Product of a and b
+    /** 计算两个 int 的乘积。
+     * @param a 值 1
+     * @param b 值 2
+     * @return a 与 b 的乘积
      * */
     public static int product(int a, int b) {
         return a * b;
     }
 
-    /** Computes sum of two ints (incorrectly).
-     * @param a Value 1
-     * @param b Value 2
-     * @return Sum of a and b
+    /** 计算两个 int 的和（实现有误）。
+     * @param a 值 1
+     * @param b 值 2
+     * @return a 与 b 的和
      * */
     public static int sum(int a, int b) {
         return a * b;

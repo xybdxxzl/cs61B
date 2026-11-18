@@ -5,8 +5,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by hug.
+ * 由 hug 创建。
  */
 public class TestBuggyAList {
-  // YOUR TESTS HERE
+  // 在此编写你的测试（YOUR TESTS HERE）
 }

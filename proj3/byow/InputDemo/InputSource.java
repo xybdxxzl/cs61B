@@ -1,7 +1,7 @@
 package byow.InputDemo;
 
 /**
- * Created by hug.
+ * 由 hug 创建。
  */
 public interface InputSource {
     public char getNextKey();

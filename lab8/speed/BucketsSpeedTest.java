@@ -12,13 +12,12 @@ import hashmap.MyHashMapTSBuckets;
 import hashmap.MyHashMapHSBuckets;
 import hashmap.MyHashMapPQBuckets;
 
-/** Performs a timing test on three different set implementations.
- *  @author Neil Kulkarni adapted from Josh Hug, Brendan Hu
+/** 对三种不同的集合实现执行计时测试。
+ *  @author Neil Kulkarni，改编自 Josh Hug、Brendan Hu
  */
 public class BucketsSpeedTest {
     /**
-     * Requests user input and performs tests of three different set
-     * implementations. ARGS is unused. 
+     * 请求用户输入，并对三种不同的集合实现执行测试。ARGS 未使用。 
      */
     public static void main(String[] args) throws IOException {
         int N;
@@ -36,7 +35,7 @@ public class BucketsSpeedTest {
             System.out.print("\nEnter # strings to insert into each map: ");
             N = waitForPositiveInt(input);
 
-            // Test each of the map implementations
+            // 测试每一种 map 实现
             timeRandomMap61B(new MyHashMapALBuckets<>(), N, L);
             timeRandomMap61B(new MyHashMapLLBuckets<>(), N, L);
             timeRandomMap61B(new MyHashMapTSBuckets<>(), N, L);
@@ -50,8 +49,8 @@ public class BucketsSpeedTest {
     }
 
     /**
-     * Returns time needed to put N random strings of length L into the
-     * hashmap.Map61B 61bMap.
+     * 返回将 N 个长度为 L 的随机字符串放入
+     * hashmap.Map61B 61bMap 所需的时间。
      */
     public static double insertRandom(Map61B<String, Integer> map61B, int N, int L) {
         Stopwatch sw = new Stopwatch();
@@ -64,9 +63,9 @@ public class BucketsSpeedTest {
     }
 
     /**
-     * Attempts to insert N random strings of length L into map,
-     * Prints time of the N insert calls, otherwise
-     * Prints a nice message about the error
+     * 尝试将 N 个长度为 L 的随机字符串插入 map，
+     * 打印 N 次插入调用所耗的时间，否则
+     * 打印一条关于错误的友好消息
      */
     public static void timeRandomMap61B(Map61B<String, Integer> map, int N, int L) {
         try {
@@ -80,9 +79,9 @@ public class BucketsSpeedTest {
     }
 
     /**
-     * Waits for the user on other side of Scanner
-     * to enter a positive int,
-     * and outputs that int
+     * 等待 Scanner 另一侧的用户
+     * 输入一个正整数，
+     * 并输出该整数
      */
     public static int waitForPositiveInt(Scanner input) {
         int ret = 0;
@@ -92,14 +91,14 @@ public class BucketsSpeedTest {
                 input.next();
             }
             ret = input.nextInt();
-            input.nextLine(); //consume \n not taken by nextInt()
+            input.nextLine(); //消耗 nextInt() 未取走的 \n
         } while (ret <= 0);
         return ret;
     }
-    /* ------------------------------- Private methods ------------------------------- */
+    /* ------------------------------- 私有方法 ------------------------------- */
     /**
-     * To be called after catching a StackOverflowError
-     * Prints the error with corresponding N and L
+     * 在捕获 StackOverflowError 之后调用
+     * 打印带有相应 N 和 L 的错误
      */
     private static void printInfoOnStackOverflow(int N, int L) {
         System.out.println("--Stack Overflow -- couldn't add " + N
@@ -107,7 +106,7 @@ public class BucketsSpeedTest {
     }
 
     /**
-     * Prints a nice message for the user on bad input
+     * 在输入有误时为用户打印一条友好消息
      */
     private static void errorBadIntegerInput() {
         System.out.print("Please enter a positive integer: ");

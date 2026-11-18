@@ -4,9 +4,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Tests by Brendan Hu, Spring 2015
- * Revised for 2016 by Josh Hug
- * Revised for 2021 by Neil Kulkarni
+ * 由 Brendan Hu 于 2015 年春季编写的测试
+ * 2016 年由 Josh Hug 修订
+ * 2021 年由 Neil Kulkarni 修订
  */
 public class TestMyHashMapBuckets {
 
@@ -38,7 +38,7 @@ public class TestMyHashMapBuckets {
         d = new MyHashMapPQBuckets<>();
     }
 
-    //assumes put/size/containsKey/get work
+    //假定 put/size/containsKey/get 正常工作
     @Test
     public void sanityClearTest() {
         TestMyHashMap.sanityClearTest(new MyHashMapALBuckets<>());
@@ -48,7 +48,7 @@ public class TestMyHashMapBuckets {
         TestMyHashMap.sanityClearTest(new MyHashMapPQBuckets<>());
     }
 
-    // assumes put works
+    // 假定 put 正常工作
     @Test
     public void sanityContainsKeyTest() {
         TestMyHashMap.sanityContainsKeyTest(new MyHashMapALBuckets<>());
@@ -58,7 +58,7 @@ public class TestMyHashMapBuckets {
         TestMyHashMap.sanityContainsKeyTest(new MyHashMapPQBuckets<>());
     }
 
-    // assumes put works
+    // 假定 put 正常工作
     @Test
     public void sanityGetTest() {
         TestMyHashMap.sanityGetTest(new MyHashMapALBuckets<>());
@@ -68,7 +68,7 @@ public class TestMyHashMapBuckets {
         TestMyHashMap.sanityGetTest(new MyHashMapPQBuckets<>());
     }
 
-    // assumes put works
+    // 假定 put 正常工作
     @Test
     public void sanitySizeTest() {
         TestMyHashMap.sanitySizeTest(new MyHashMapALBuckets<>());
@@ -78,7 +78,7 @@ public class TestMyHashMapBuckets {
         TestMyHashMap.sanitySizeTest(new MyHashMapPQBuckets<>());
     }
 
-    //assumes get/containskey work
+    //假定 get/containskey 正常工作
     @Test
     public void sanityPutTest() {
         TestMyHashMap.sanityPutTest(new MyHashMapALBuckets<>());
@@ -97,7 +97,7 @@ public class TestMyHashMapBuckets {
         TestMyHashMap.sanityKeySetTest(new MyHashMapPQBuckets<>());
     }
 
-    // Test for general functionality and that the properties of Maps hold.
+    // 测试一般功能以及 Map 的各项性质是否成立。
     @Test
     public void functionalityTest() {
         TestMyHashMap.functionalityTest(new MyHashMapALBuckets<>(), new MyHashMapALBuckets<>());

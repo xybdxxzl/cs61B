@@ -6,10 +6,10 @@ import java.awt.Color;
 import java.awt.Font;
 
 /**
- * Utility class for rendering tiles. You do not need to modify this file. You're welcome
- * to, but be careful. We strongly recommend getting everything else working before
- * messing with this renderer, unless you're trying to do something fancy like
- * allowing scrolling of the screen or tracking the avatar or something similar.
+ * 用于渲染 tile 的实用类。你不需要修改此文件。但你也可以修改，
+ * 只是要小心。我们强烈建议先把其他所有东西都弄好，然后
+ * 再来折腾这个渲染器，除非你想做些花哨的事，比如
+ * 允许屏幕滚动或跟踪角色之类的。
  */
 public class TERenderer {
     private static final int TILE_SIZE = 16;
@@ -19,13 +19,13 @@ public class TERenderer {
     private int yOffset;
 
     /**
-     * Same functionality as the other initialization method. The only difference is that the xOff
-     * and yOff parameters will change where the renderFrame method starts drawing. For example,
-     * if you select w = 60, h = 30, xOff = 3, yOff = 4 and then call renderFrame with a
-     * TETile[50][25] array, the renderer will leave 3 tiles blank on the left, 7 tiles blank
-     * on the right, 4 tiles blank on the bottom, and 1 tile blank on the top.
-     * @param w width of the window in tiles
-     * @param h height of the window in tiles.
+     * 功能与另一个初始化方法相同。唯一的区别是 xOff
+     * 和 yOff 参数会改变 renderFrame 方法从何处开始绘制。例如，
+     * 如果你选择 w = 60、h = 30、xOff = 3、yOff = 4，然后用一个
+     * TETile[50][25] 数组调用 renderFrame，渲染器将在左侧留下 3 个 tile 的空白、右侧留下 7 个 tile 的空白、
+     * 底部留下 4 个 tile 的空白，顶部留下 1 个 tile 的空白。
+     * @param w 窗口宽度（以 tile 为单位）
+     * @param h 窗口高度（以 tile 为单位）。
      */
     public void initialize(int w, int h, int xOff, int yOff) {
         this.width = w;
@@ -45,30 +45,30 @@ public class TERenderer {
     }
 
     /**
-     * Initializes StdDraw parameters and launches the StdDraw window. w and h are the
-     * width and height of the world in number of tiles. If the TETile[][] array that you
-     * pass to renderFrame is smaller than this, then extra blank space will be left
-     * on the right and top edges of the frame. For example, if you select w = 60 and
-     * h = 30, this method will create a 60 tile wide by 30 tile tall window. If
-     * you then subsequently call renderFrame with a TETile[50][25] array, it will
-     * leave 10 tiles blank on the right side and 5 tiles blank on the top side. If
-     * you want to leave extra space on the left or bottom instead, use the other
-     * initializatiom method.
-     * @param w width of the window in tiles
-     * @param h height of the window in tiles.
+     * 初始化 StdDraw 参数并启动 StdDraw 窗口。w 和 h 是
+     * 世界以 tile 数量计的宽度和高度。如果你传给
+     * renderFrame 的 TETile[][] 数组比它小，那么就会在
+     * 帧的右侧和顶部边缘留下额外的空白。例如，如果你选择 w = 60、
+     * h = 30，此方法将创建一个宽 60 个 tile、高 30 个 tile 的窗口。如果
+     * 你随后用一个 TETile[50][25] 数组调用 renderFrame，它将在
+     * 右侧留下 10 个 tile 的空白、顶部留下 5 个 tile 的空白。如果
+     * 你想改为在左侧或底部留出额外空间，请使用另一个
+     * 初始化方法。
+     * @param w 窗口宽度（以 tile 为单位）
+     * @param h 窗口高度（以 tile 为单位）。
      */
     public void initialize(int w, int h) {
         initialize(w, h, 0, 0);
     }
 
     /**
-     * Takes in a 2d array of TETile objects and renders the 2d array to the screen, starting from
-     * xOffset and yOffset.
+     * 接收一个 TETile 对象的二维数组，并将该二维数组渲染到屏幕上，
+     * 从 xOffset 和 yOffset 处开始。
      *
-     * If the array is an NxM array, then the element displayed at positions would be as follows,
-     * given in units of tiles.
+     * 如果该数组是 NxM 数组，那么显示在相应位置上的元素将如下所示
+     * （以 tile 为单位）。
      *
-     *              positions   xOffset |xOffset+1|xOffset+2| .... |xOffset+world.length
+     *              位置        xOffset |xOffset+1|xOffset+2| .... |xOffset+world.length
      *                     
      * startY+world[0].length   [0][M-1] | [1][M-1] | [2][M-1] | .... | [N-1][M-1]
      *                    ...    ......  |  ......  |  ......  | .... | ......
@@ -76,12 +76,12 @@ public class TERenderer {
      *               startY+1    [0][1]  |  [1][1]  |  [2][1]  | .... | [N-1][1]
      *                 startY    [0][0]  |  [1][0]  |  [2][0]  | .... | [N-1][0]
      *
-     * By varying xOffset, yOffset, and the size of the screen when initialized, you can leave
-     * empty space in different places to leave room for other information, such as a GUI.
-     * This method assumes that the xScale and yScale have been set such that the max x
-     * value is the width of the screen in tiles, and the max y value is the height of
-     * the screen in tiles.
-     * @param world the 2D TETile[][] array to render
+     * 通过改变 xOffset、yOffset 以及初始化时屏幕的大小，你可以在不同的
+     * 位置留出空白空间，为其他信息（例如 GUI）腾出地方。
+     * 此方法假定 xScale 和 yScale 已被设置为：x 的最大值
+     * 是屏幕以 tile 计的宽度，y 的最大值是屏幕
+     * 以 tile 计的高度。
+     * @param world 要渲染的二维 TETile[][] 数组
      */
     public void renderFrame(TETile[][] world) {
         int numXTiles = world.length;

@@ -1,18 +1,18 @@
 package gitlet;
 
-/** General exception indicating a Gitlet error.  For fatal errors, the
- *  result of .getMessage() is the error message to be printed.
+/** 表示 Gitlet 错误的一般异常。对于致命错误，
+ *  .getMessage() 的结果就是要打印的错误消息。
  *  @author P. N. Hilfinger
  */
 class GitletException extends RuntimeException {
 
 
-    /** A GitletException with no message. */
+    /** 一个不带消息的 GitletException。 */
     GitletException() {
         super();
     }
 
-    /** A GitletException MSG as its message. */
+    /** 一个以 MSG 作为消息的 GitletException。 */
     GitletException(String msg) {
         super(msg);
     }

@@ -7,7 +7,7 @@ public class Dog {
         size = s;
     }
 
-    /** Makes a noise. */
+    /** 发出叫声。 */
     public String noise() {
         if (size < 10) {
             return "yip";

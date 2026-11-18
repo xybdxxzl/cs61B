@@ -3,10 +3,10 @@ package timingtest;
 import edu.princeton.cs.algs4.Stopwatch;
 
 /**
- * Created by hug.
+ * 由 hug 创建。
  */
 public class StopwatchDemo {
-    /** Computes the nth Fibonacci number using a slow naive recursive strategy.*/
+    /** 使用慢速的朴素递归策略计算第 n 个斐波那契数。*/
     private static int fib(int n) {
         if (n < 0) {
             return 0;

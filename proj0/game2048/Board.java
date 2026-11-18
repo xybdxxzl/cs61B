@@ -11,9 +11,9 @@ import java.util.Random;
  * @author hug
  */
 public class Board implements Iterable<Tile> {
-    /** Current contents of the board. */
+    /** 棋盘的当前内容。 */
     private Tile[][] values;
-    /** Side that the board currently views as north. */
+    /** 棋盘当前视为“北”的一侧。 */
     private Side viewPerspective;
 
     public Board(int size) {
@@ -21,13 +21,13 @@ public class Board implements Iterable<Tile> {
         viewPerspective = Side.NORTH;
     }
 
-    /** Shifts the view of the board such that the board behaves as if side S is north. */
+    /** 移动棋盘的视角，使得棋盘的表现就好像 S 侧是北一样。 */
     public void setViewingPerspective(Side s) {
         viewPerspective = s;
     }
 
-    /** Create a board where RAWVALUES hold the values of the tiles on the board 
-     * (0 is null) with a current score of SCORE and the viewing perspective set to north. */
+    /** 创建一个棋盘，其中 RAWVALUES 保存棋盘上各方块的值
+     * （0 表示 null），当前分数为 SCORE，观看视角设为北。 */
     public Board(int[][] rawValues, int score) {
         int size = rawValues.length;
         values = new Tile[size][size];
@@ -46,44 +46,44 @@ public class Board implements Iterable<Tile> {
         }
     }
 
-    /** Returns the size of the board. */
+    /** 返回棋盘的大小。 */
     public int size() {
         return values.length;
     }
 
-    /** Shifts the view of the Board. */
+    /** 移动棋盘的视角。 */
     public void startViewingFrom(Side s) {
         viewPerspective = s;
     }
 
-    /** Return the current Tile at (COL, ROW), when sitting with the board
-     *  oriented so that SIDE is at the top (farthest) from you. */
+    /** 返回 (COL, ROW) 处当前的 Tile，此时棋盘的方向使得
+     *  SIDE 位于你视线的顶部（离你最远）。 */
     private Tile vtile(int col, int row, Side side) {
         return values[side.col(col, row, size())][side.row(col, row, size())];
     }
 
-    /** Return the current Tile at (COL, ROW), where 0 <= ROW < size(),
-     *  0 <= COL < size(). Returns null if there is no tile there. */
+    /** 返回 (COL, ROW) 处当前的 Tile，其中 0 <= ROW < size()，
+     *  0 <= COL < size()。如果该处没有方块则返回 null。 */
     public Tile tile(int col, int row) {
         return vtile(col, row, viewPerspective);
     }
 
-    /** Clear the board to empty and reset the score. */
+    /** 将棋盘清空并重置分数。 */
     public void clear() {
         for (Tile[] column : values) {
             Arrays.fill(column, null);
         }
     }
 
-    /** Adds the tile T to the board */
+    /** 将方块 T 添加到棋盘上 */
     public void addTile(Tile t) {
         values[t.col()][t.row()] = t;
     }
 
-    /** Places the Tile TILE at column COL, row ROW where COL and ROW are
-     * treated as coordinates with respect to the current viewPerspective.
+    /** 将 Tile TILE 放置在列 COL、行 ROW 处，其中 COL 和 ROW
+     * 被视为相对于当前 viewPerspective 的坐标。
      *
-     * Returns whether or not this move is a merge.
+     * 返回此次移动是否构成一次合并。
      * */
     public boolean move(int col, int row, Tile tile) {
         int pcol = viewPerspective.col(col, row, size()),
@@ -104,7 +104,7 @@ public class Board implements Iterable<Tile> {
     }
 
     @Override
-    /** Returns the board as a string, used for debugging. */
+    /** 返回棋盘的字符串表示，用于调试。 */
     public String toString() {
         Formatter out = new Formatter();
         out.format("%n[%n");
@@ -121,7 +121,7 @@ public class Board implements Iterable<Tile> {
         return out.toString();
     }
 
-    /** Iterates through teach tile in the board. */
+    /** 遍历棋盘中的每一个方块。 */
     private class AllTileIterator implements Iterator<Tile>, Iterable<Tile> {
         int r, c;
 

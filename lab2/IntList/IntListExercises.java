@@ -3,10 +3,10 @@ package IntList;
 public class IntListExercises {
 
     /**
-     * Part A: (Buggy) mutative method that adds a constant C to each
-     * element of an IntList
+     * 第 A 部分：（有 bug 的）变异方法，向 IntList 的每个元素
+     * 加上一个常量 C
      *
-     * @param lst IntList from Lecture
+     * @param lst 来自课堂讲解的 IntList
      */
     public static void addConstant(IntList lst, int c) {
         IntList head = lst;
@@ -17,11 +17,11 @@ public class IntListExercises {
     }
 
     /**
-     * Part B: Buggy method that sets node.first to zero if
-     * the max value in the list starting at node has the same
-     * first and last digit, for every node in L
+     * 第 B 部分：有 bug 的方法，对于 L 中的每个节点，
+     * 如果从该节点开始的列表中的最大值其首位数字
+     * 与末位数字相同，则将该节点的 first 置为零
      *
-     * @param L IntList from Lecture
+     * @param L 来自课堂讲解的 IntList
      */
     public static void setToZeroIfMaxFEL(IntList L) {
         IntList p = L;
@@ -33,7 +33,7 @@ public class IntListExercises {
         }
     }
 
-    /** Returns the max value in the IntList starting at L. */
+    /** 返回从 L 开始的 IntList 中的最大值。 */
     public static int max(IntList L) {
         int max = L.first;
         IntList p = L.rest;
@@ -46,8 +46,8 @@ public class IntListExercises {
         return max;
     }
 
-    /** Returns true if the last digit of x is equal to
-     *  the first digit of x.
+    /** 如果 x 的末位数字等于 x 的首位数字，
+     *  则返回 true。
      */
     public static boolean firstDigitEqualsLastDigit(int x) {
         int lastDigit = x % 10;
@@ -59,14 +59,14 @@ public class IntListExercises {
     }
 
     /**
-     * Part C: (Buggy) mutative method that squares each prime
-     * element of the IntList.
+     * 第 C 部分：（有 bug 的）变异方法，对 IntList 中的每个
+     * 质数元素求平方。
      *
-     * @param lst IntList from Lecture
-     * @return True if there was an update to the list
+     * @param lst 来自课堂讲解的 IntList
+     * @return 如果列表发生了更新则为 true
      */
     public static boolean squarePrimes(IntList lst) {
-        // Base Case: we have reached the end of the list
+        // 基本情况：我们已经到达列表的末尾
         if (lst == null) {
             return false;
         }

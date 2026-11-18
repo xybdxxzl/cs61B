@@ -1,17 +1,15 @@
-/** Class that prints the Collatz sequence starting from a given number.
+/** 该类用于打印从给定数字开始的 Collatz 序列（考拉兹序列）。
  *  @author YOUR NAME HERE
  */
 public class Collatz {
 
-    /** Buggy implementation of nextNumber! */
+    /** nextNumber 的有 bug 的实现！ */
     public static int nextNumber(int n) {
-        if (n  == 128) {
-            return 1;
-        } else if (n == 5) {
-            return 3 * n + 1;
-        } else {
-            return n * 2;
-        }
+        if(n%2==0)
+            return n/2;
+        else
+            return 3*n+1;
+
     }
 
     public static void main(String[] args) {

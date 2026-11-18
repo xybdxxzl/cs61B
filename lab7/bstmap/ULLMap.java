@@ -3,15 +3,15 @@ package bstmap;
 import java.util.Iterator;
 import java.util.Set;
 
-/** A data structure that uses a linked list to store pairs of keys and values.
- *  Any key must appear at most once in the dictionary, but values may appear multiple
- *  times. Key operations are get(key), put(key, value), and contains(key) methods. The value
- *  associated to a key is the value in the last call to put with that key. */
+/** 一种使用链表来存储键值对的数据结构。
+ *  任何键至多只能出现一次，但值可以出现多次。
+ *  关键操作有 get(key)、put(key, value) 和 contains(key) 方法。与某个键
+ *  关联的值是最近一次使用该键调用 put 时的值。 */
 public class ULLMap<K, V>  implements Map61B<K, V> {
 
     int size = 0;
 
-    /** Returns the value corresponding to KEY or null if no such value exists. */
+    /** 返回与 KEY 对应的值，如果不存在这样的值则返回 null。 */
     public V get(K key) {
         if (list == null) {
             return null;
@@ -28,15 +28,15 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
         return size;
     }
 
-    /** Removes all of the mappings from this map. */
+    /** 从此映射中移除所有映射关系。 */
     @Override
     public void clear() {
         size = 0;
         list = null;
     }
 
-    /** Inserts the key-value pair of KEY and VALUE into this dictionary,
-     *  replacing the previous value associated to KEY, if any. */
+    /** 将 KEY 和 VALUE 的键值对插入此字典，
+     *  若存在则替换与 KEY 关联的先前值。 */
     public void put(K key, V val) {
         if (list != null) {
             Entry lookup = list.get(key);
@@ -51,8 +51,8 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
         }
     }
 
-    /** Returns true if and only if this dictionary contains KEY as the
-     *  key of some key-value pair. */
+    /** 当且仅当此字典包含某个键值对以 KEY 作为键时
+     *  返回 true。 */
     public boolean containsKey(K key) {
         if (list == null) {
             return false;
@@ -65,24 +65,23 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
         return new ULLMapIter();
     }
 
-    /** Keys and values are stored in a linked list of Entry objects.
-     *  This variable stores the first pair in this linked list. */
+    /** 键和值存储在由 Entry 对象构成的链表中。
+     *  此变量存储该链表中的第一对。 */
     private Entry list;
 
-    /** Represents one node in the linked list that stores the key-value pairs
-     *  in the dictionary. */
+    /** 表示存储字典中键值对的链表中的一个节点。 */
     private class Entry {
 
-        /** Stores KEY as the key in this key-value pair, VAL as the value, and
-         *  NEXT as the next node in the linked list. */
+        /** 将 KEY 存储为此键值对的键，VAL 存储为值，NEXT
+         *  存储为链表中的下一个节点。 */
         Entry(K k, V v, Entry n) {
             key = k;
             val = v;
             next = n;
         }
 
-        /** Returns the Entry in this linked list of key-value pairs whose key
-         *  is equal to KEY, or null if no such Entry exists. */
+        /** 返回此键值对链表中键等于 KEY 的 Entry，
+         *  如果不存在这样的 Entry 则返回 null。 */
         Entry get(K k) {
             if (k != null && k.equals(key)) {
                 return this;
@@ -93,20 +92,20 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
             return next.get(key);
         }
 
-        /** Stores the key of the key-value pair of this node in the list. */
+        /** 存储链表中此节点的键值对的键。 */
         K key;
-        /** Stores the value of the key-value pair of this node in the list. */
+        /** 存储链表中此节点的键值对的值。 */
         V val;
-        /** Stores the next Entry in the linked list. */
+        /** 存储链表中的下一个 Entry。 */
         Entry next;
 
     }
 
-    /** An iterator that iterates over the keys of the dictionary. */
+    /** 一个遍历字典中所有键的迭代器。 */
     private class ULLMapIter implements Iterator<K> {
 
-        /** Create a new ULLMapIter by setting cur to the first node in the
-         *  linked list that stores the key-value pairs. */
+        /** 通过将 cur 设为存储键值对的链表中的第一个节点，
+         *  创建一个新的 ULLMapIter。 */
         public ULLMapIter() {
             cur = list;
         }
@@ -123,7 +122,7 @@ public class ULLMap<K, V>  implements Map61B<K, V> {
             return ret;
         }
 
-        /** Stores the current key-value pair. */
+        /** 存储当前的键值对。 */
         private Entry cur;
 
     }
